@@ -38,6 +38,7 @@ jobs:
 
       - name: 准备构建环境
         run: |
+          sudo chmod +x rp-helper.sh
           ./rp-helper.sh build ${{matrix.platform}}-${{matrix.version}}
 
       - name: 配置引导镜像
