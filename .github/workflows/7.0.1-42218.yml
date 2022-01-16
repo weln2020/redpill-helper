@@ -14,6 +14,12 @@ jobs:
           sudo chmod +x rp-helper.sh
           ./rp-helper.sh build apollolake-7.0.1-42218
 
+      - name: 添加扩展驱动
+        run: |
+          ./rp-helper.sh ext https://raw.githubusercontent.com/jumkey/redpill-load/develop/redpill-acpid/rpext-index.json
+          ./rp-helper.sh ext https://raw.githubusercontent.com/jumkey/redpill-load/develop/redpill-virtio/rpext-index.json
+          ./rp-helper.sh ext https://raw.githubusercontent.com/jumkey/redpill-load/develop/redpill-boot-wait/rpext-index.json
+
       - name: 编译引导镜像
         run: ./rp-helper.sh auto apollolake-7.0.1-42218
 
