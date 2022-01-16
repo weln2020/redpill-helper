@@ -6,17 +6,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: 同步仓库
-        uses: actions/checkout@v2
-
       - name: 构建工具链
         run: |
           sudo chmod +x rp-helper.sh
           ./rp-helper.sh build apollolake-7.0.1-42218
-
-      - name: 添加扩展驱动
-        run: |
-          sudo ./rp-helper.sh ext apollolake-7.0.1-42218 add https://github.com/jumkey/redpill-load/raw/develop/redpill-acpid/rpext-index.json
 
       - name: 编译引导镜像
         run: ./rp-helper.sh auto apollolake-7.0.1-42218
