@@ -8,7 +8,7 @@
         "local_rp_load_use": "false",
         "local_rp_load_path": "./redpill-load",
         "auto_clean": "false",
-        "use_build_cache": "false",
+        "use_build_cache": "true",
         "clean_images": "all",
         "use_custom_bind_mounts": "false",
         "custom_bind_mounts": [
@@ -22,7 +22,7 @@
         {
             "id": "bromolow-6.2.4-25556",
             "platform_version": "bromolow-6.2.4-25556",
-            "user_config_json": "user_config.json",
+            "user_config_json": "apollolake_user_config.json",
             "docker_base_image": "debian:8-slim",
             "compile_with": "kernel",
             "redpill_lkm_make_target": "dev-v6",
@@ -48,7 +48,7 @@
         {
             "id": "bromolow-7.0.1-42218",
             "platform_version": "bromolow-7.0.1-42218",
-            "user_config_json": "user_config.json",
+            "user_config_json": "apollolake_user_config.json",
             "docker_base_image": "debian:8-slim",
             "compile_with": "toolkit_dev",
             "redpill_lkm_make_target": "dev-v7",
@@ -74,7 +74,7 @@
         {
             "id": "apollolake-6.2.4-25556",
             "platform_version": "apollolake-6.2.4-25556",
-            "user_config_json": "user_config.json",
+            "user_config_json": "apollolake_user_config.json",
             "docker_base_image": "debian:8-slim",
             "compile_with": "kernel",
             "redpill_lkm_make_target": "dev-v6",
@@ -100,7 +100,7 @@
         {
             "id": "apollolake-7.0.1-42218",
             "platform_version": "apollolake-7.0.1-42218",
-            "user_config_json": "user_config.json",
+            "user_config_json": "apollolake_user_config.json",
             "docker_base_image": "debian:10-slim",
             "compile_with": "toolkit_dev",
             "redpill_lkm_make_target": "dev-v7",
