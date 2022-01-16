@@ -25,7 +25,7 @@ jobs:
            version: 7.0.1-42218
 
     steps:
-      - name: 同步主存储库
+      - name: 同步仓库
         uses: actions/checkout@v2
 
       - name: 缓存加速
@@ -45,15 +45,15 @@ jobs:
         run: |
           cp user_config.json ${{matrix.platform}}_user_config.json
           cat ${{matrix.platform}}_user_config.json
-          ./rp-helper.sh add https://github.com/jumkey/redpill-load/raw/develop/redpill-virtio/rpext-index.json
-          ./rp-helper.sh add https://raw.githubusercontent.com/jumkey/redpill-load/develop/redpill-acpid/rpext-index.json
-          ./rp-helper.sh add https://github.com/jumkey/redpill-load/raw/develop/redpill-boot-wait/rpext-index.json
-          ./rp-helper.sh add https://raw.githubusercontent.com/pocopico/rp-ext/main/e1000/rpext-index.json
-          ./rp-helper.sh add https://raw.githubusercontent.com/pocopico/rp-ext/main/igb/rpext-index.json
-          ./rp-helper.sh add https://raw.githubusercontent.com/pocopico/rp-ext/main/r8101/rpext-index.json
-          ./rp-helper.sh add https://raw.githubusercontent.com/pocopico/rp-ext/main/r8125/rpext-index.json
-          ./rp-helper.sh add https://raw.githubusercontent.com/pocopico/rp-ext/main/r8152/rpext-index.json
-          ./rp-helper.sh add https://raw.githubusercontent.com/pocopico/rp-ext/main/r8168/rpext-index.json
+          ./global_config.json add https://github.com/jumkey/redpill-load/raw/develop/redpill-virtio/rpext-index.json
+          ./global_config.json add https://raw.githubusercontent.com/jumkey/redpill-load/develop/redpill-acpid/rpext-index.json
+          ./global_config.json add https://github.com/jumkey/redpill-load/raw/develop/redpill-boot-wait/rpext-index.json
+          ./global_config.json add https://raw.githubusercontent.com/pocopico/rp-ext/main/e1000/rpext-index.json
+          ./global_config.json add https://raw.githubusercontent.com/pocopico/rp-ext/main/igb/rpext-index.json
+          ./global_config.json add https://raw.githubusercontent.com/pocopico/rp-ext/main/r8101/rpext-index.json
+          ./global_config.json add https://raw.githubusercontent.com/pocopico/rp-ext/main/r8125/rpext-index.json
+          ./global_config.json add https://raw.githubusercontent.com/pocopico/rp-ext/main/r8152/rpext-index.json
+          ./global_config.json add https://raw.githubusercontent.com/pocopico/rp-ext/main/r8168/rpext-index.json
 
       - name: 编译引导镜像
         run: ./rp-helper.sh auto ${{matrix.platform}}-${{matrix.version}}
