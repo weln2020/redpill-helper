@@ -16,8 +16,13 @@ jobs:
 
       - name: 添加扩展驱动
         run: |
-          ./rp-helper.sh ext apollolake-7.0.1-42218 add https://raw.githubusercontent.com/pocopico/rp-ext/master/r8169/rpext-index.json
-          ./rp-helper.sh ext apollolake-7.0.1-42218 add https://raw.githubusercontent.com/pocopico/rp-ext/master/r8169/releases/ds918p_42218.json
+          ./rp-helper.sh ext apollolake-7.0.1-42218 add https://github.com/jumkey/redpill-load/raw/develop/redpill-acpid/rpext-index.json
+          ./rp-helper.sh ext apollolake-7.0.1-42218 add https://github.com/jumkey/redpill-load/raw/develop/redpill-virtio/rpext-index.json
+          ./rp-helper.sh ext apollolake-7.0.1-42218 add https://github.com/jumkey/redpill-load/raw/develop/redpill-boot-wait/rpext-index.json
+          ./rp-helper.sh ext apollolake-7.0.1-42218 add https://github.com/RedPill-TTG/redpill-boot-wait/raw/master/recipes/universal.json
+          ./rp-helper.sh ext apollolake-7.0.1-42218 add https://github.com/RedPill-TTG/redpill-virtio/raw/master/recipes/ds918p_41890.json
+          ./rp-helper.sh ext apollolake-7.0.1-42218 add https://github.com/pocopico/rp-ext/raw/master/r8169/rpext-index.json
+          ./rp-helper.sh ext apollolake-7.0.1-42218 add https://github.com/pocopico/rp-ext/raw/master/r8169/releases/ds918p_42218.json
 
       - name: 编译引导镜像
         run: ./rp-helper.sh auto apollolake-7.0.1-42218
